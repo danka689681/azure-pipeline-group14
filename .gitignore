@@ -1,4 +1,4 @@
-terraform.tfstate
+git rm -r --cached .ideaterraform.tfstate
 terraform.tfstate.backup
 .terraform.lock.hcl
 .terraform/
@@ -7,3 +7,5 @@ terraform.tfstate.backup
 src/config.json
 
 .venv/
+.idea
+.DS_Store
