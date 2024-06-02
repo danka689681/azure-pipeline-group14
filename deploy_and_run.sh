@@ -18,14 +18,12 @@ UPDATED_CONFIG_FILE="./updated-config-pipeline.yaml"
 # Create a unique job name using the current timestamp
 JOB_NAME="job_$(date +%Y%m%d%H%M%S)"
 
-
-echo $FULL_URL
 # Read the original configuration file and update the path with the full URL and unique job name
 sed "s|name:.*|name: $JOB_NAME|;" $CONFIG_FILE_PATH > $UPDATED_CONFIG_FILE
 
 # Initialize and apply Terraform configuration
-#terraform init
-#terraform apply -auto-approve
+terraform init
+terraform apply -auto-approve
 
 az extension add -n ml -y
 
