@@ -1,0 +1,18 @@
+$schema: https://azuremlschemas.azureedge.net/latest/pipelineComponent.schema.json
+name: diabetes_prediction_pipeline
+display_name: Diabetes prediction pipeline
+type: pipeline
+jobs:
+  main_job:
+    type: command
+    code: src
+    command: >
+      python -m pip install --upgrade pip &&
+      pip install -r requirements.txt &&
+      python pipeline-final.py
+    environment: azureml://registries/azureml/environments/AzureML-ACPT-pytorch-1.13-py38-cuda11.7-gpu/versions/10
+    compute: azureml:pdp-compute-group14c1
+    display_name: ml-pipeline-group14
+    experiment_name: experiment1
+    description: Train a two-class logistic regression model on the Diabetes dataset.
+

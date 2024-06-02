@@ -1,0 +1,9 @@
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.lock.hcl
+.terraform/
+
+
+src/config.json
+
+.venv/
