@@ -15,10 +15,6 @@ env = Environment.get(workspace=workspace, name="AzureML-ACPT-pytorch-1.13-py38-
 # Define experiment
 experiment = Experiment(workspace=workspace, name='terrafrorm-pipeline')
 
-parser = argparse.ArgumentParser(description='Process input dataset for pipeline')
-parser.add_argument('--input-dataset', type=str, help='URI of the input dataset')
-args = parser.parse_args()
-
 
 datasets = Dataset.get_all(workspace)
 for name, ds in datasets.items():

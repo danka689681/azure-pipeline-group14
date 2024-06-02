@@ -86,18 +86,6 @@ resource "azurerm_machine_learning_compute_instance" "PDP_Compute_Instance" {
   machine_learning_workspace_id = azurerm_machine_learning_workspace.PDP_Workspace.id
   virtual_machine_size          = "STANDARD_DS2_V2"  # Set the virtual machine size directly
 }
-### Run Azure ML Pipeline
-#resource "null_resource" "run_azure_ml_pipeline" {
-#  provisioner "local-exec" {
-#    command     = <<EOT
-#      # Fetch the pipeline ID
-#    command = <<EOT
-#      python3 ./hello-comonent/pipeline-exec.py ${data.azurerm_subscription.current.id}
-#
-#    EOT
-#    interpreter = ["bash", "-c"]
-#  }
-#}
-#
+
 
 
